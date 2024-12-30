@@ -110,7 +110,7 @@ const Features = () => (
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="videos/feature-1.mp4"
+          src="https://res.cloudinary.com/dvpcwnw9m/video/upload/v1735570013/feature-1_hdtpx7.mp4"
           title={
             <>
               Ch<b>e</b>st w<b>or</b>k<b>o</b>ut
@@ -124,7 +124,7 @@ const Features = () => (
       <div className="grid md:h-[195vh] h-full w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="videos/feature-2.mp4"
+            src="https://res.cloudinary.com/dvpcwnw9m/video/upload/v1735570064/feature-2_l2g9ux.mp4"
             title={
               <>
                 l<b>e</b>g w<b>or</b>k<b>o</b>ut
@@ -137,7 +137,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 w-full row-span-1 md:col-span-1 md:ms-0">
           <BentoCard
-            src="videos/feature-3.mp4"
+            src="https://res.cloudinary.com/dvpcwnw9m/video/upload/v1735570042/feature-3_xgo7jy.mp4"
             title={
               <>
                 back<b> work</b>
@@ -151,7 +151,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1  md:col-span-1 md:me-0">
           <BentoCard
-            src="videos/feature-4.mp4"
+            src="https://res.cloudinary.com/dvpcwnw9m/video/upload/v1735570005/feature-4_lq2zkk.mp4"
             title={
               <>
                 card<b>io</b>
@@ -164,7 +164,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-2 md:col-span-2 md:row-span-2">
           <BentoCard
-            src="videos/feature-6.mp4"
+            src="https://res.cloudinary.com/dvpcwnw9m/video/upload/v1735570023/feature-6_v6nzgv.mp4"
             title={
               <>
                 lat <b>wo</b>rkout
