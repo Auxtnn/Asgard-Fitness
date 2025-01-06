@@ -7,7 +7,7 @@ import { Menu, X, Volume2, VolumeX } from "lucide-react";
 const navItems = ["About", "Contact", "Membership"];
 
 const NavBar = () => {
-  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
