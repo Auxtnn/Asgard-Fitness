@@ -27,7 +27,8 @@ const Footer = () => {
             </p>
             <div className="mt-6 flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/asgardfitness"
+                target="_blank"
                 className="rounded-full bg-gray-800 p-2 text-gray-400 transition-colors hover:bg-gray-700 hover:text-white"
               >
                 <Facebook size={20} />

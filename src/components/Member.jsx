@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Membership = () => {
-  const [isYearly, setIsYearly] = useState(false); // State to toggle between monthly and yearly
-
-  const handleToggle = () => {
-    setIsYearly((prev) => !prev); // Toggle between monthly and yearly
-  };
-
   return (
     <div className="bg-black" id="plans">
       <div className="text-white py-8 px-5 mx-auto lg:w-11/12">
@@ -17,24 +11,110 @@ const Membership = () => {
           ASGARD FITNESS Membership Plans
         </h2>
 
-        {/* Toggle Button */}
-        <div className="flex justify-center items-center space-x-4 mb-8">
-          <span className="text-white">Monthly</span>
-          <div
-            onClick={handleToggle}
-            className={`relative inline-block w-16 h-8 cursor-pointer rounded-full transition-colors duration-300 ${
-              isYearly ? "bg-[#ff6654]" : "bg-gray-600"
-            }`}
-          >
-            <div
-              className={`absolute top-0 left-0 w-8 h-8 bg-white rounded-full transition-transform duration-300 ${
-                isYearly ? "translate-x-8" : "translate-x-0"
-              }`}
-            ></div>
-          </div>
-          <span className="text-white">Yearly</span>
-        </div>
+        {/* Single Memberships */}
+        <h3 className="text-2xl font-bold mb-6 text-center text-[#FF0034]">
+          Individual Plans
+        </h3>
+        <motion.div
+          className="grid grid-cols-1 gap-8 md:grid-cols-3 mb-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <PricingCard
+            title="On Peak - Single"
+            description="Full access membership for individuals"
+            price={40}
+            duration="/month"
+            benefits={[
+              "All hours, 7 days a week access",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+            ]}
+          />
 
+          <PricingCard
+            title="Off Peak - Single"
+            description="Perfect for flexible daytime training"
+            price={37}
+            duration="/month"
+            benefits={[
+              "Access 09:00-15:00 Mon-Fri",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+            ]}
+          />
+
+          <PricingCard
+            title="Month Pass"
+            description="Try our facilities with no commitment"
+            price={45}
+            duration="/month"
+            benefits={[
+              "All hours, 7 days a week access",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "No minimum term",
+              "£10 refundable card deposit",
+            ]}
+            featured={true}
+          />
+        </motion.div>
+
+        {/* Couple Memberships */}
+        <h3 className="text-2xl font-bold mb-6 text-center text-[#FF0034]">
+          Couple Plans
+        </h3>
+        <motion.div
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <PricingCard
+            title="On Peak - Couple"
+            description="Train together, save together"
+            price={75}
+            duration="/month"
+            benefits={[
+              "All hours, 7 days a week access",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+              "Second member joins on first visit",
+            ]}
+          />
+
+          <PricingCard
+            title="Off Peak - Couple"
+            description="Daytime training for two"
+            price={65}
+            duration="/month"
+            benefits={[
+              "Access 09:00-15:00 Mon-Fri",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+              "Second member joins on first visit",
+            ]}
+          />
+        </motion.div>
+
+        {/* Special Rates */}
+        <h3 className="text-2xl font-bold mb-6 text-center text-[#FF0034]">
+          Special Rates
+        </h3>
         <motion.div
           className="grid grid-cols-1 gap-8 md:grid-cols-3"
           initial={{ opacity: 0 }}
@@ -42,48 +122,49 @@ const Membership = () => {
           transition={{ duration: 0.6 }}
         >
           <PricingCard
-            title="Basic Plan"
-            description="Access to essential gym features with all the basics."
-            price={isYearly ? 550 : 50}
-            duration={isYearly ? "/year" : "/month"}
+            title="HERO On Peak"
+            description="For NHS, Military, Veterans, Fire & Police"
+            price={35}
+            duration="/month"
             benefits={[
-              "Unlimited Gym Access",
-              "3 Training Programs",
-              "Free Fitness Consultation",
-              "30% Off Drinks",
-              "Free WiFi",
+              "All hours, 7 days a week access",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+              "Valid ID required",
             ]}
           />
 
           <PricingCard
-            title="Premier Plan"
-            description="All-inclusive gym features for a premium experience."
-            price={isYearly ? 1150 : 90}
-            duration={isYearly ? "/year" : "/month"}
+            title="HERO Off Peak"
+            description="For NHS, Military, Veterans, Fire & Police"
+            price={32}
+            duration="/month"
             benefits={[
-              "Unlimited Gym Access",
-              "All Training Programs",
-              "Free Fitness Consultation",
-              "Personal Trainers",
-              "Free Clothes & Equipment",
-              "50% Off Drinks",
-              "Free WiFi",
+              "Access 09:00-15:00 Mon-Fri",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
+              "Valid ID required",
             ]}
-            featured={true}
           />
 
           <PricingCard
-            title="Elite Plan"
-            description="Exclusive plan with advanced features for serious athletes."
-            price={isYearly ? 750 : 65}
-            duration={isYearly ? "/year" : "/month"}
+            title="OAP On Peak"
+            description="Senior citizen rate"
+            price={30}
+            duration="/month"
             benefits={[
-              "Unlimited Gym Access",
-              "5 Training Programs",
-              "Free Fitness Consultation",
-              "45% Off Drinks",
-              "Free WiFi",
-              "Free Clothes & Equipment",
+              "All hours, 7 days a week access",
+              "Wide Range of Facilities",
+              "Personal Training",
+              "Expert Help & Advice",
+              "12 months minimum term",
+              "No Joining Fee",
             ]}
           />
         </motion.div>
@@ -107,12 +188,11 @@ const PricingCard = ({
 
   return (
     <motion.div
-      id="membership"
       ref={ref}
       className={`rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
         featured
-          ? "border border-[#FF0034] transform hover:scale-10"
-          : "border border-[#FF0034] hover:scale-10"
+          ? "border border-[#FF0034] transform hover:scale-105"
+          : "border border-[#FF0034] hover:scale-105"
       }`}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -123,16 +203,16 @@ const PricingCard = ({
         <p className="text-gray-400 mb-4">{description}</p>
         <div className="mb-6">
           <p className="text-5xl font-bold">
-            ${price.toLocaleString()}
+            £{price}
             <span className="text-gray-500 text-base">{duration}</span>
           </p>
         </div>
         <div className="w-full flex justify-center items-center">
           <a
-            href="/"
-            className="w-full py-3 px-4 text-white text-center bg-[#FF0034] rounded-md transition-colors duration-300"
+            href="#contact"
+            className="w-full py-3 px-4 text-white text-center bg-[#FF0034] rounded-md transition-colors duration-300 hover:bg-[#cc0029]"
           >
-            Start Training
+            Join Now
           </a>
         </div>
       </div>
