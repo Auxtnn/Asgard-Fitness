@@ -11,6 +11,7 @@ export default {
         "robert-regular": ["robert-regular", "sans-serif"],
       },
       colors: {
+        gold: "#FF0034",
         blue: {
           50: "#DFDFF0",
           75: "#dfdff2",

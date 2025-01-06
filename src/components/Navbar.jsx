@@ -4,7 +4,7 @@ import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Volume2, VolumeX } from "lucide-react";
 
-const navItems = ["About", "Contact", "Membership"];
+const navItems = ["About", "Features", "Contact", "Membership"];
 
 const NavBar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);

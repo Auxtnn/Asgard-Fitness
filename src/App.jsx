@@ -15,8 +15,8 @@ function App() {
       <About />
       <Features />
       <Story />
-      <Contact />
       <Membership />
+      <Contact />
       <Footer />
     </main>
   );
